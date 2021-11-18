@@ -1,0 +1,40 @@
+/*
+  
+  FUNCTIONS
+  
+  Global Sass functions
+  
+*/
+
+@use "sass:list";
+
+// SPACING
+// ────────────────────────────────────
+
+// Main spacer function that uses $spacer-size-map 
+// to output a list of valid CSS size values
+// 
+// $_sizes – an arbitrary list of keys that match keys in $space-size-map
+//           or an explicit modifier value (e.g. sm, lg, 1.5, 3)
+// 
+@function space($_sizes) {
+  // Convert argument to string, so we can convert it to a List
+  // $str: #{$_sizes};
+  // $size-list: str-to-list($str);
+
+  $sizes: ();
+  @each $size in $_sizes {
+    @if map-has-key($spacer-size-map, $size) {
+      $sizes: list.append($sizes, map-get($spacer-size-map, $size));
+    }
+    @else {
+      $sizes: list.append($sizes, calc(#{$spacer} * #{$size}));
+    }
+  }
+  @return #{$sizes};
+}
+
+// Alias wrapper for `space` function
+@function sp($multipliers...) {
+  @return space($multipliers...);
+}
