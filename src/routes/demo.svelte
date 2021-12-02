@@ -1,340 +1,53 @@
-<!-- <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
-
-<div class="nav"></div>
-
-
-<section>
-  <h1>Typography</h1>
-  <div class="heading">
-    <h2>Display</h2>
-    <h3>D1</h3>
-  </div>
+<!--
   
-  <div class="content">
-    <p class="d1">Display 1</p>
-  </div>
-  <div class="heading"><h3>D2</h3></div>
-  <div class="content">
-    <p class="d2">Display 2</p>
-  </div>
-  <div class="heading"><h3>D3</h3></div>
-  <div class="content">
-    <p class="d2">Display 3</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="heading">
-    <h2>Headings</h2>
-    <h3>H1</h3>
-  </div>
-  <div class="content">
-    <h1>The five boxing wizards jump quickly.</h1>
-  </div>
-  <div class="heading"><h3>H2</h3></div>
-  <div class="content">
-    <h2>The five boxing wizards jump quickly.</h2>
-  </div>
-  <div class="heading"><h3>H3</h3></div>
-  <div class="content">
-    <h3>The five boxing wizards jump quickly.</h3>
-  </div>
-  <div class="heading"><h3>H4</h3></div>
-  <div class="content">
-    <h4>The five boxing wizards jump quickly.</h4>
-  </div>
-  <div class="heading"><h3>H5</h3></div>
-  <div class="content">
-    <h5>The five boxing wizards jump quickly.</h5>
-  </div>
-  <div class="heading"><h3>H6</h3></div>
-  <div class="content">
-    <h6>The five boxing wizards jump quickly.</h6>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="heading">
-    <h2>Paragraphs</h2>
-    <h3>Lead</h3>
-  </div>
-
-  <div class="content">
-    <p class="lead">Next they turned to the business table.</p>
-  </div>
-
-  <div class="heading align-top"><h3>P</h3></div>
-  <div class="content">
-    <p>Next they turned to the business table. On the desk, among the neat array of papers, a large envelope was uppermost, and bore, in the doctor’s hand, the name of Mr. Utterson. The lawyer unsealed it, and several enclosures fell to the floor. The first was a will, drawn in the same eccentric terms as the one which he had returned six months before, to serve as a testament in case of death and as a deed of gift in case of disappearance; but in place of the name of Edward Hyde, the lawyer, with indescribable amazement read the name of Gabriel John Utterson. He looked at Poole, and then back at the paper, and last of all at the dead malefactor stretched upon the carpet.</p>
-  </div>
-
-  <div class="heading align-top"><h3>Small</h3></div>
-  <div class="content">
-    <small>Next they turned to the business table. On the desk, among the neat array of papers, a large envelope was uppermost, and bore, in the doctor’s hand, the name of Mr. Utterson.</small>
-  </div>
-
-  <div class="heading"><h3>Link</h3></div>
-  <div class="content">
-    <p>This is an <a href="#">example</a> of a link within a block of text.</p>
-  </div>
+  DEMO page
   
-</section>
+-->
 
-<section>
-  <h1>Color</h1>
+<script>
+  import Text from '$components/text.svelte';
+  import Link from '$components/link.svelte';
+  import Image from '$components/image.svelte';
 
-  <div class="heading align-top">
-    <h2>Main</h2>
-  </div>
-  <div class="content">
-    <div class="color-items">
+  let srcset = [
+    {
+      src: 'https://picsum.photos/200/300?random=1',
+      media: '(min-width: 1440px)',
+    },
+    {
+      src: 'https://picsum.photos/200/300?random=2',
+      media: '(min-width: 980px)',
+    },
+  ]
+</script>
 
-      <div class="color-item">
-        <div class="color-block color-blue">
-          <h3 class="color-title">$blue-400</h3>
-          <p class="color-hex color-blue">#D02828</p>
-        </div>
-          <div class="color-variants color-blue">
-            <div class="color-variant">100</div>
-            <div class="color-variant">200</div>
-            <div class="color-variant">300</div>
-            <div class="color-variant">400</div>
-            <div class="color-variant">500</div>
-            <div class="color-variant">600</div>
-            <div class="color-variant">700</div>
-          </div>
-      </div>
+<!-- RENDER
+────────────────────────────────── -->
 
-      <div class="color-item">
-        <div class="color-block color-purple">
-          <h3 class="color-title">$purple-400</h3>
-          <p class="color-hex color-purple">#8953f0</p>
-        </div>
-        <div class="color-variants color-purple">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
+<div class="demo-body">
+  <Text as="h1">Heading 1</Text>
+  <Text>I'm a default p tag</Text>
+  <Text as="p">I'm a defined p tag</Text>
+  <Text as="small">I'm small</Text>
+  <br/>
+  <br/>
+  <Link to="/">Take me Home</Link>
+  <br/>
+  <Link to="https://www.google.com/search?q=cow">Moo</Link>
+  <br/>
+  <Link to="https://svelte.dev/docs" newtab>Newtab</Link>
+  <br/>
+  <Link to="/demo" external>External</Link>
+  <br/>
+  <br/>
+  <Image src="https://picsum.photos/200/300?random=3" {srcset} picture/>
+</div>
 
-      <div class="color-item">
-        <div class="color-block color-magenta">
-          <h3 class="color-title">$magenta-400</h3>
-          <p class="color-hex color-magenta">#f053f0</p>
-        </div>
-        <div class="color-variants color-magenta">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
+<!-- STYLES
+────────────────────────────────── -->
 
-      <div class="color-item">
-        <div class="color-block color-red">
-          <h3 class="color-title">$red-400</h3>
-          <p class="color-hex color-red">#d02828</p>
-        </div>
-        <div class="color-variants color-red">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-      <div class="color-item">
-        <div class="color-block color-orange">
-          <h3 class="color-title">$orange-400</h3>
-          <p class="color-hex color-orange">#f0a853</p>
-        </div>
-        <div class="color-variants color-orange">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-      <div class="color-item">
-        <div class="color-block color-yellow">
-          <h3 class="color-title">$yellow-400</h3>
-          <p class="color-hex color-yellow">#f0d853</p>
-        </div>
-        <div class="color-variants color-yellow">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-      <div class="color-item">
-        <div class="color-block color-green">
-          <h3 class="color-title">$green-400</h3>
-          <p class="color-hex color-green">#5a965e</p>
-        </div>
-        <div class="color-variants color-green">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-      <div class="color-item">
-        <div class="color-block color-cyan">
-          <h3 class="color-title">$cyan-400</h3>
-          <p class="color-hex color-cyan">#5a965e</p>
-        </div>
-        <div class="color-variants color-cyan">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="heading align-top">
-    <h2>Monochrome</h2>
-  </div>
-  <div class="content">
-    <div class="color-items">
-
-      <div class="color-item">
-        <div class="color-block color-dark-gray">
-          <h3 class="color-title">$dark-gray-400</h3>
-          <p class="color-hex color-dark-gray">#232731</p>
-        </div>
-        <div class="color-variants color-dark-gray">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-      <div class="color-item">
-        <div class="color-block color-gray">
-          <h3 class="color-title">$gray-400</h3>
-          <p class="color-hex color-gray">#585858</p>
-        </div>
-        <div class="color-variants color-gray">
-          <div class="color-variant">100</div>
-          <div class="color-variant">200</div>
-          <div class="color-variant">300</div>
-          <div class="color-variant">400</div>
-          <div class="color-variant">500</div>
-          <div class="color-variant">600</div>
-          <div class="color-variant">700</div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="heading align-top">
-    <h2>Theme</h2>
-  </div>
-
-  <div class="content">
-    <div class="color-theme-items">
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-blue">$primary</div>
-      </div>
-      <div class="color-theme-item">
-      <div class="color-theme-title color-block color-gray">$secondary</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-cyan">$info</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-green">$success</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-yellow">$warning</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-red">$danger</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-light-gray">$light</div>
-      </div>
-      <div class="color-theme-item">
-        <div class="color-theme-title color-block color-dark-gray">$dark</div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section>
-  <h1>Button</h1>
-
-  <div class="heading align-top">
-    <h2>Button Types</h2>
-  </div>
-
-  <div class="content">
-    <div class="btn-group">
-      <button class="btn">Default</button>
-      <button class="btn btn-ghost">Ghost</button>
-      <button class="btn btn-text">Text</button>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="heading align-top">
-    <h2>Button Sizes</h2>
-  </div>
-
-  <div class="content">
-    <div class="btn-group btn-group-stacked">
-      <button class="btn btn-small">Small</button>
-      <button class="btn">Default</button>
-      <button class="btn btn-large">Large</button>
-      <button class="btn btn-block btn-large">Block</button>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="back-to-splash-btn">
-    <a class="btn btn-text" href="/">&larr; Back</a>
-  </div>
-</section>
+<style>
+  .demo-body {
+    margin: 12px;
+  }
+</style>
