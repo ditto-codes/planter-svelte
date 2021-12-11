@@ -145,8 +145,7 @@ p {
   font-weight: $lead-font-weight;
 }
 
-small, 
-.small {
+small {
   @include font-size($small-font-size);
   font-weight: $small-font-weight;
   text-transform: $small-text-transform;

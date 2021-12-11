@@ -8,6 +8,7 @@
   import Text from '$components/text.svelte';
   import Link from '$components/link.svelte';
   import Image from '$components/image.svelte';
+  import Button from '$components/button.svelte';
 
   let srcset = [
     {
@@ -19,6 +20,14 @@
       media: '(min-width: 980px)',
     },
   ]
+
+
+  let pressed = false;
+  let onClick = () => {
+    console.log(`Wart wart wart!`);
+    pressed = !pressed;
+  }
+
 </script>
 
 <!-- RENDER
@@ -41,6 +50,24 @@
   <br/>
   <br/>
   <Image src="https://picsum.photos/200/300?random=3" {srcset} picture/>
+  <br/>
+  <br/>
+  <Button>No Props</Button>
+  <br/>
+  <br/>
+  <Button size="small" variant="ghost">Small Ghost</Button>
+  <br/>
+  <br/>
+  <Button variant="text" pressed={pressed} onClick={onClick}>Pressed Text</Button>
+  <br/>
+  <br/>
+  <Button size="block" href="https://www.google.com">Block Google</Button>
+  <br/>
+  <br/>
+  <Button disabled>Disabled</Button>
+  <br/>
+  <br/>
+  <Button type="reset">Reset</Button>
 </div>
 
 <!-- STYLES

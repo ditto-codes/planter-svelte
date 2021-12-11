@@ -24,7 +24,7 @@
 <!-- RENDER
 ────────────────────────────────── -->
 
-<a href={to} class={className} target={newtab ? '_blank' : ''} {rel}>
+<a href={to} class={className} target={newtab ? '_blank' : ''} {rel} {...$$restProps}>
   <slot/>
 </a>
 
