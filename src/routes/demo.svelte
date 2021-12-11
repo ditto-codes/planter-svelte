@@ -10,6 +10,7 @@
   import Image from '$components/image.svelte';
   import Button from '$components/button.svelte';
   import Nav from '$components/nav.svelte';
+  import Icon from '$components/icon.svelte';
 
   let srcset = [
     {
@@ -48,6 +49,8 @@
 
 
 <div class="demo-body">
+  <Icon name="alert-circle" />
+  <Icon name="arrow-right" color="red"/>
   <Text as="h1">Heading 1</Text>
   <Text>I'm a default p tag</Text>
   <Text as="p">I'm a defined p tag</Text>
