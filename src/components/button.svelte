@@ -14,12 +14,10 @@
   export let disabled = false;
   export let pressed = false;
   export let onClick = () => {};
-  
-  // let className = '';
   export let { class: className } = '';
   
   let classes = `${variant} ${size}`;
-  if (className) classes += className;
+  if (className) classes += ` ${className}`;
 
 </script>
 
@@ -27,11 +25,26 @@
 ────────────────────────────────── -->
 
 {#if href}
-    <a href={href} class:pressed class:disabled class={classes} on:click={onClick} {...$$restProps}>
+    <a 
+    href={href} 
+    class:pressed 
+    class:disabled 
+    class={classes} 
+    on:click={onClick} 
+    {...$$restProps}
+    >
       <slot/>
     </a>
   {:else}
-    <button type={type} class:pressed class:disabled class={classes} on:click={onClick} {...$$restProps}>
+    <button 
+      type={type} 
+      class:pressed 
+      class:disabled 
+      class={classes} 
+      on:click={onClick} 
+      disabled={disabled}
+      {...$$restProps}
+    >
       <slot/>
     </button>
 {/if}

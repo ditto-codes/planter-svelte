@@ -9,6 +9,7 @@
   import Link from '$components/link.svelte';
   import Image from '$components/image.svelte';
   import Button from '$components/button.svelte';
+  import Nav from '$components/nav.svelte';
 
   let srcset = [
     {
@@ -28,10 +29,23 @@
     pressed = !pressed;
   }
 
+  let links = [
+    { href: '#1', text: 'Link 1'}, 
+    { href: '#2', text: 'Link 2'}, 
+    { href: '#3', text: 'Link 3'}, 
+  ];
+
 </script>
 
 <!-- RENDER
 ────────────────────────────────── -->
+
+<Nav align="right" links={links} role="Secondary">
+  <svelte:fragment slot="after">
+    <Button>I'm very cool</Button>
+  </svelte:fragment>
+</Nav>
+
 
 <div class="demo-body">
   <Text as="h1">Heading 1</Text>
@@ -68,12 +82,13 @@
   <br/>
   <br/>
   <Button type="reset">Reset</Button>
+
 </div>
 
 <!-- STYLES
 ────────────────────────────────── -->
 
-<style>
+<style lang="scss">
   .demo-body {
     margin: 12px;
   }
