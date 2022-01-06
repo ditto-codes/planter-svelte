@@ -9,14 +9,14 @@
       name: 'as',
       type: 'string',
       default: `'p'`,
-      values: [`'p', 'small', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'`],
+      values: [`'p'`, `'small'`, `'h1'`, `'h2'`, `'h3'`, `'h4'`, `'h5'`, `'h6'`],
       description: 'The element to render.', 
     },
     {
       name: 'class',
       type: 'string',
       default: `''`,
-      values: 'any',
+      values: ['any'],
       description: 'Class(es) passed to element.', 
     }
 
