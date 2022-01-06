@@ -7,12 +7,11 @@
 <script>
   import Button from '$components/button.svelte';
   import Nav from '$components/nav.svelte';
-  import Icon from '$components/icon.svelte';
   import Sidebar from '$components/demo/sidebar.svelte';
   import GitHubMark from '$components/demo/github-mark.svelte';
 
   let links = [
-    { href: '#1', text: 'Link 1'}, 
+    { href: '#1', text: 'Docs'}, 
   ];
 
 </script>
@@ -21,11 +20,17 @@
 ────────────────────────────────── -->
 <div class="demo-container">
   <Nav align="right" links={links} role="Secondary">
-    <svelte:fragment slot="after">
-      <Button href="https://github.com/ditto-labs-co/planter-svelte">
+    <li class="logo-wrapper" slot="before">
+      <a href="/" class="logo">
+        <img src="/planter-basic-logo.png" alt="Planter Svelte" title="Home">
+      </a>
+      <span class="h6">Planter Svelte</span>
+    </li>
+    <li slot="after">
+      <Button variant="unstyled" href="https://github.com/ditto-labs-co/planter-svelte">
         <GitHubMark name="github" alt="GitHub" title="View on GitHub" />
       </Button>
-    </svelte:fragment>
+    </li>
   </Nav>
   <div class="layout">
     <Sidebar />
@@ -56,4 +61,32 @@
     display: grid;
     grid-template-columns: auto 1fr;
   }
+  
+  .logo {
+    display: inline-block;
+    img {
+      width: 36px;
+    }
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+
+  li {
+    padding: sp(xs) sp(sm);
+    list-style: none;
+    display: inline-block;
+
+    display: flex;
+    align-items: center;
+  }
+  .logo-wrapper {
+    justify-self: start;
+    margin-right: auto;
+    span {
+      margin-bottom: 0;
+    }
+  }
+  
 </style>

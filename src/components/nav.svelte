@@ -17,8 +17,8 @@
 ────────────────────────────────── -->
 <nav class={classes} {...$$restProps}>
   
-  <ul>
-    <li><slot name="before" /></li>
+  <ul class={align}>
+    <slot name="before" />
     {#if links}
       {#each links as link}
         <li>
@@ -26,7 +26,7 @@
         </li>
       {/each}
     {/if}
-    <li><slot name="after" /></li>
+    <slot name="after" />
   </ul>
 </nav>
 
@@ -44,6 +44,9 @@
     ul {
       margin: 0;
       padding: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
     }
 
     li {

@@ -121,6 +121,18 @@ a {
 }
 
 // TODO: add unstyled type
+.unstyled {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  &:hover {
+    background-color: transparent;
+    color: inherit;
+  }
+  // &:focus {
+
+  // }
+}
 
 // Sizes
 
