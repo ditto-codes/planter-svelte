@@ -5,3 +5,21 @@
   <a href="/demo/button/" class="btn">Demo</a>
   <a href="planter.dev/docs/planter-basic/getting-started" class="btn btn-ghost">Docs</a>
 </div>
+
+<style lang="scss">
+  .splash {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .btn {
+      display: inline-block;
+
+      &:not(:first-of-type) {
+        margin-left: sp(sm);
+      }
+    }
+  }
+</style>
