@@ -7,12 +7,12 @@
 <script>
   import Button from '$components/button.svelte';
   import Nav from '$components/nav.svelte';
+  import Icon from '$components/icon.svelte';
   import Sidebar from '$components/demo/sidebar.svelte';
+  import GitHubMark from '$components/demo/github-mark.svelte';
 
   let links = [
     { href: '#1', text: 'Link 1'}, 
-    { href: '#2', text: 'Link 2'}, 
-    { href: '#3', text: 'Link 3'}, 
   ];
 
 </script>
@@ -22,7 +22,9 @@
 <div class="demo-container">
   <Nav align="right" links={links} role="Secondary">
     <svelte:fragment slot="after">
-      <Button>I'm very cool</Button>
+      <Button href="https://github.com/ditto-labs-co/planter-svelte">
+        <GitHubMark name="github" alt="GitHub" title="View on GitHub" />
+      </Button>
     </svelte:fragment>
   </Nav>
   <div class="layout">

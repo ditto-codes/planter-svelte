@@ -120,6 +120,8 @@ a {
   }
 }
 
+// TODO: add unstyled type
+
 // Sizes
 
 .small {

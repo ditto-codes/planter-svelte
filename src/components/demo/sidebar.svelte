@@ -34,7 +34,7 @@
         <p class="heading h6">{heading}</p>
         <ul>
           {#each links[heading] as link}
-            <li>
+            <li class="link-wrapper">
               <a href={`/demo/${link.toLowerCase()}`} class="link">{link}</a>
             </li>
           {/each}
@@ -75,24 +75,43 @@
     margin: 0;
   }
 
+  .link-wrapper {
+    border-radius: 2px;
+    transition: $animate-fast;
+    &:hover {
+      color: $blue;
+      background-color: rgba($blue-100, .25);
+    }
+    &.selected {
+      color: $blue;
+      background-color: rgba($blue, .5);
+    }
+  }
+
   .link {
     text-decoration: none;
     display: inline-block;
     width: 100%;
     padding: sp(xs sm);
-    border-radius: 2px;
+    
     color: $gray;
-    transition: $animate-fast;
-
+    transition: inherit;
     &:hover {
-      color: $blue;
-      background-color: rgba($blue-100, .25);
+      color: inherit;
+      background-color: transparent;
     }
 
-    &.selected {
-      color: $blue;
-      background-color: rgba($blue, .5);
-    }
+    // color: inherit;
+
+    // &:hover {
+    //   color: $blue;
+    //   background-color: rgba($blue-100, .25);
+    // }
+
+    // &.selected {
+    //   color: $blue;
+    //   background-color: rgba($blue, .5);
+    // }
   }
 </style>
 
