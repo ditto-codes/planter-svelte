@@ -5,7 +5,12 @@
   Sidebar for demo organization.
   
 -->
+
 <script>  
+  import { page } from '$app/stores';
+
+  $: current = $page.path;
+
   export let { class: className } = '';
   export let links = {
     'Components': [
@@ -34,7 +39,12 @@
         <p class="heading h6">{heading}</p>
         <ul>
           {#each links[heading] as link}
-            <li class="link-wrapper">
+            <li 
+              class={`link-wrapper${current === `/demo/${link.toLowerCase()}` 
+                ? ' selected' 
+                : ''
+              }`}
+            >
               <a href={`/demo/${link.toLowerCase()}`} class="link">{link}</a>
             </li>
           {/each}
@@ -79,12 +89,16 @@
     border-radius: 2px;
     transition: $animate-fast;
     &:hover {
-      color: $blue;
+      .link { 
+        color: $blue; 
+      }
       background-color: rgba($blue-100, .25);
     }
     &.selected {
-      color: $blue;
-      background-color: rgba($blue, .5);
+      .link { 
+        color: $blue; 
+      }
+      background-color: rgba($blue-100, .5);
     }
   }
 

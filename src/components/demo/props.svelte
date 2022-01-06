@@ -8,11 +8,6 @@
       description: '-', 
     }
   ]
-
-
-
-
-  console.log(props);
 </script>
 
 
