@@ -42,7 +42,6 @@
 </div>
 
 
-
 <!-- STYLES
 ────────────────────────────────── -->
 
@@ -69,6 +68,17 @@
     }
     &:hover {
       background-color: transparent;
+    }
+  }
+
+  a {
+    $focus-outline: 2px solid $purple;
+    $border: $border-width solid transparent;
+    &:focus-visible {
+      // border: $border;
+      border-radius: $border-radius;
+      outline-offset: 2px; 
+      outline: $focus-outline;
     }
   }
 

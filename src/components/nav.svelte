@@ -30,7 +30,6 @@
   </ul>
 </nav>
 
-
 <!-- STYLES
 ────────────────────────────────── -->
 <style lang="scss">
@@ -61,12 +60,21 @@
     font-weight: 500;
     text-decoration: none;
 
-    &:hover {
+    &:hover, 
+    &:focus-visible {
       color: $blue;
       background-color: transparent;
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: sp(xs);
+    }
+
+    $focus-outline: 2px solid $purple;
+    $border: $border-width solid transparent;
+    &:focus-visible {
+      border-radius: $border-radius;
+      outline-offset: 2px; 
+      outline: $focus-outline;
     }
   }
   

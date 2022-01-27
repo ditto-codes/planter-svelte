@@ -88,7 +88,8 @@
   .link-wrapper {
     border-radius: 2px;
     transition: $animate-fast;
-    &:hover {
+    &:hover, 
+    &:focus-within {
       .link { 
         color: $blue; 
       }
@@ -99,6 +100,11 @@
         color: $blue; 
       }
       background-color: rgba($blue-100, .5);
+    }
+    &:focus-within {
+      $focus-outline: 2px solid $purple;
+      outline-offset: 2px;
+      outline: $focus-outline;
     }
   }
 
@@ -113,6 +119,10 @@
     &:hover {
       color: inherit;
       background-color: transparent;
+    }
+
+    &:focus-visible {
+      outline: 0;
     }
 
     // color: inherit;

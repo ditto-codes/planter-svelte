@@ -89,7 +89,7 @@ a {
   border-radius: $border-radius;
   padding: 10px 26px;
   outline: 0;
-  transition: background-color $animate-faster;
+  transition: $animate-faster;
   text-decoration: none;
   display: block;
 
@@ -103,7 +103,7 @@ a {
     background-color: $active-bg-color;
   }
 
-  &:focus {
+  &:focus-visible {
     border: $border;
     outline-offset: 2px;
     outline: $focus-outline;
@@ -120,7 +120,6 @@ a {
   }
 }
 
-// TODO: add unstyled type
 .unstyled {
   background-color: transparent;
   color: inherit;
@@ -129,9 +128,11 @@ a {
     background-color: transparent;
     color: inherit;
   }
-  // &:focus {
 
-  // }
+  &:hover,
+  &:focus-visible {
+    color: $blue-500;
+  }
 }
 
 // Sizes
@@ -218,7 +219,7 @@ a {
     background-color: $active-bg-color;
   }
 
-  &:focus {
+  &:focus-visible {
     border: $focus-border;
     outline-offset: 2px;
     outline: $focus-outline;
