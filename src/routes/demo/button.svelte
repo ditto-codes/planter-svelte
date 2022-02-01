@@ -35,7 +35,7 @@
     {
       name: 'to',
       type: 'string',
-      default: ``,
+      default: `-`,
       values: [`any`,],
       description: 'If set, will use anchor tag instead of <button>', 
     },
@@ -56,7 +56,7 @@
     {
       name: 'onClick',
       type: 'function',
-      default: ``,
+      default: `-`,
       values: [`any`,],
       description: 'Optional handler to control button when clicked', 
     },
