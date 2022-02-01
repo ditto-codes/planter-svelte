@@ -1,6 +1,5 @@
 <script>
   import Button from '$components/button.svelte';
-  import Text from '$components/text.svelte';
   import Example from '$components/demo/example.svelte';
   import Section from '$components/demo/section.svelte';
   import Props from '$components/demo/props.svelte';
@@ -45,14 +44,14 @@
       type: 'boolean',
       default: `false`,
       values: [],
-      description: 'If true button will toggle pressed state when clicked', 
+      description: 'Boolean flag that will toggle pressed state when clicked', 
     },
     {
       name: 'disabled',
       type: 'boolean',
       default: `false`,
       values: [],
-      description: 'Adds disabled attribute to element and disabled styling', 
+      description: 'Boolean flag that sets disabled attribute and disabled styling', 
     },
     {
       name: 'onClick',
