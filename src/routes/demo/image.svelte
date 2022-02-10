@@ -4,74 +4,86 @@
   import Section from '$components/demo/section.svelte';
   import Props from '$components/demo/props.svelte';
 
-  let srcset = [
-    {
-      src: 'https://picsum.photos/200/300?random=1',
-      media: '(min-width: 1440px)',
-    },
-    {
-      src: 'https://picsum.photos/200/300?random=2',
-      media: '(min-width: 980px)',
-    },
-  ]
-
   let props = [
     {
       name: 'src',
       type: 'string',
       default: `-`,
       values: [`any`,],
-      description: 'Path to image asset', 
+      description: 'Image source', 
     },
     {
       name: 'alt',
       type: 'string',
       default: `-`,
       values: ['any'],
-      description: 'Defines alt attribute.', 
+      description: `Sets 'alt' attribute`, 
     },
     {
       name: 'lazy',
       type: 'boolean',
       default: `false`,
       values: [''],
-      description: 'Enables lazy loading', 
+      description: `Flag that, if true, sets 'loading' attribute to 'lazy' (and takes precedence over 'loading' prop)`, 
+    },
+    {
+      name: 'loading',
+      type: 'string',
+      default: `''`,
+      values: [`'auto'`, `'eager'`, `'lazy'`,],
+      description: `Sets 'loading' attribute`, 
     },
     {
       name: 'srcset',
       type: 'array',
       default: `-`,
       values: [],
-      description: 'Additional paths and valid media query using <img sercset=""/>', 
+      description: `An array of objects that define the attributes of the <source> elements within the <picture> element`,
     },
     {
       name: 'picture',
       type: 'boolean',
       default: `false`,
       values: [],
-      description: 'Uses <picture> tag instead of <image>.', 
+      description: 'Uses <picture> instead of <img>', 
     },
     {
       name: 'class',
       type: 'string',
       default: `-`,
       values: ['any'],
-      description: 'Class(es) passed to element.', 
+      description: 'Class(es) passed to element', 
     },
-
-
   ]
+
+  let sources = [
+    {
+      srcset: 'https://picsum.photos/300/200?random=1',
+      media: '(min-width: 1440px)',
+    },
+    {
+      srcset: 'https://picsum.photos/300/200?random=2',
+      media: '(min-width: 980px)',
+    },
+  ]
+
 </script>
 
   <Section 
     title="Image" 
     description="Description"
   >
-    <Example label="srcset" top>
-      <Image src="https://picsum.photos/200/300?random=3" {srcset} />
+    <Example label="<img>" top>
+      <Image src="https://picsum.photos/300/200?random=3" />
     </Example>
-    <Example label="<picture>">
-      <Image src="https://picsum.photos/200/300?random=4" picture/>
+    <Example label="<picture>" top>
+      <Image src="https://picsum.photos/300/200?random=4" picture {sources}/>
+    </Example>
+    <Example label="Loading" top>
+      <Image src="https://picsum.photos/300/200?random=5" loading="lazy" />
+    </Example>
+    <Example label="Lazy" top>
+      <Image src="https://picsum.photos/300/200?random=6" lazy />
     </Example>
   </Section>
 

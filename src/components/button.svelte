@@ -13,7 +13,6 @@
   export let href = false;
   export let disabled = false;
   export let pressed = false;
-  export let onClick = () => {};
   export let { class: className } = '';
   
   let classes = `${variant} ${size}`;
@@ -26,22 +25,22 @@
 
 {#if href}
     <a 
-    href={href} 
-    class:pressed 
-    class:disabled 
-    class={classes} 
-    on:click={onClick} 
-    {...$$restProps}
+      on:click
+      href={href} 
+      class:pressed 
+      class:disabled 
+      class={classes} 
+      {...$$restProps}
     >
       <slot/>
     </a>
   {:else}
     <button 
+      on:click
       type={type} 
       class:pressed 
       class:disabled 
       class={classes} 
-      on:click={onClick} 
       disabled={disabled}
       {...$$restProps}
     >
@@ -91,7 +90,7 @@ a {
   outline: 0;
   transition: $animate-faster;
   text-decoration: none;
-  display: block;
+  display: inline-block;
 
   &:hover {
     background-color: $hover-bg-color;

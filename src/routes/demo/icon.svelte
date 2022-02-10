@@ -24,10 +24,10 @@
 
   <Section title="Icon" description="Description">
     <Example label="Icon" top>
-      <Icon name="alert-circle" />
+      <Icon name="coffee" />
     </Example>
     <Example label="Color">
-      <Icon name="arrow-right" color="red"/>
+      <Icon name="smile" color="#F0A853"/>
     </Example>
   </Section>
 

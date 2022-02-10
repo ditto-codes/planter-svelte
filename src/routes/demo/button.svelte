@@ -4,12 +4,6 @@
   import Section from '$components/demo/section.svelte';
   import Props from '$components/demo/props.svelte';
 
-  let pressed = false;
-  let onClick = () => {
-    console.log(`Wart wart wart!`);
-    pressed = !pressed;
-  }
-
   let props = [
     {
       name: 'variant',
@@ -30,47 +24,63 @@
       type: 'string',
       default: `'button'`,
       values: [`'button'`, `'submit'`, `'reset'`],
-      description: 'Defines the type attribute of <button>', 
+      description: `Sets the 'type' attribute of <button>`, 
     },
     {
-      name: 'to',
+      name: 'href',
       type: 'string',
       default: `-`,
       values: [`any`,],
-      description: 'If set, will use anchor tag instead of <button>', 
+      description: 'If set, will use <a> instead of <button>', 
     },
     {
       name: 'pressed',
       type: 'boolean',
       default: `false`,
       values: [],
-      description: 'Boolean flag that will toggle pressed state when clicked', 
+      description: 'Flag that will add a pressed style if truthy', 
     },
     {
       name: 'disabled',
       type: 'boolean',
       default: `false`,
       values: [],
-      description: 'Boolean flag that sets disabled attribute and disabled styling', 
+      description: `Flag that adds disabled styling and sets the 'disabled' attribute`, 
     },
-    {
-      name: 'onClick',
-      type: 'function',
-      default: `-`,
-      values: [`any`,],
-      description: 'Optional handler to control button when clicked', 
-    },
-
-
   ]
+
+  let pressed = false;
+  let count = 0;
+
+  const onClick = () => {
+    count++;
+  }
+  const onPress = () => {
+    pressed = !pressed;
+  }
 </script>
 
 <Section 
   title="Button" 
   description="Description"
 >
-  <Example label="Default" top>
+  <Example label="Default">
     <Button>Button</Button>
+  </Example>
+  <Example label="on:click">
+    <Button on:click={onClick}>Clicked: {count}</Button>
+  </Example>
+  <Example label="Toggle Button">
+    <Button on:click={onPress} {pressed}>Toggle Button</Button>
+  </Example>
+  <Example label="Unstyled">
+    <Button variant="unstyled">I look like normal text but I'm a button</Button>
+  </Example>
+  <Example label="Link (HREF)">
+    <Button href="#somewhere">Infamous Anchor Button</Button>
+  </Example>
+  <Example label="Text">
+    <Button variant="text">Text Button</Button>
   </Example>
   <Example label="Small Ghost">
     <Button size="small" variant="ghost">Small Ghost</Button>
@@ -81,5 +91,5 @@
 </Section>
 
 <Section title="Props">
-  <Props {props} />
+  <Props {props} restProps />
 </Section>

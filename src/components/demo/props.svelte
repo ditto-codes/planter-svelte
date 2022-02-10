@@ -1,13 +1,18 @@
 <script>
   export let props = [
-    {
-      name: '-',
-      type: '-',
-      default: `'-'`,
-      values: [`'-'`],
-      description: '-', 
-    }
+    // {
+    //   name: '-',
+    //   type: '-',
+    //   default: `'-'`,
+    //   values: [`'-'`],
+    //   description: '-', 
+    // }
   ]
+
+  export let restProps = true;
+
+
+  // console.log(prop.default, prop.type);
 </script>
 
 
@@ -25,7 +30,11 @@
       <tr>
         <td class="name">{prop.name}</td>
         <td class={prop.type}>{prop.type}</td>
-        <td class={`default ${prop.type}`}>{prop.default}</td>
+        <td 
+          class={`default ${prop.default !== '-' ? prop.type : ''}`}
+        >
+          {prop.default}
+        </td>
         <td class={prop.type}>
           {#each prop.values as value, i}
             {#if value === 'any' | value.includes('See below')}
@@ -44,6 +53,12 @@
     {/each}
   </tbody>
 </table>
+<div class="footnote">
+  {#if restProps}
+    <p>All additional props are passed via <code>$$restProps</code>. Read about <a href="https://svelte.dev/docs#template-syntax-attributes-and-props">Attributes & Props</a> in the Svelte Docs.</p>
+  {/if}
+</div>
+
 
 <style lang="scss">
   table {
@@ -101,6 +116,12 @@
   .italics {
     color: $gray-300;
     font-style: italic;
+  }
+
+  .footnote {
+    color: $gray-300;
+    margin-top: sp(md);
+    font-size: $small-font-size;
   }
   
 

@@ -9,7 +9,7 @@
     {
       name: 'to',
       type: 'string',
-      default: ``,
+      default: `-`,
       values: [`any`,],
       description: 'The href value', 
     },
@@ -18,16 +18,15 @@
       type: 'string',
       default: `''`,
       values: ['any'],
-      description: 'Class(es) passed to element.', 
+      description: 'Class(es) passed to element', 
     },
     {
       name: 'external',
       type: 'boolean',
       default: `false`,
       values: [''],
-      description: 'Boolean flag to indicate usage of re="external".',
-    }
-
+      description: 'Flag that sets rel="external"',
+    },
   ]
 
 </script>
@@ -38,18 +37,18 @@
   title="Link" 
   description="Description"
 >
-  <Example label="<p>" top>
+  <Example label="Route" top>
     <Link to="/">Take me Home</Link>
   </Example>
-  <Example label="<p>" top>
+  <Example label="External" top>
     <Link to="https://www.google.com/search?q=cow">Moo</Link>
   </Example>
-  <Example label="<p>" top>
+  <Example label="Newtab" top>
     <Link to="https://svelte.dev/docs" newtab>Newtab</Link>
   </Example>
 
 </Section>
 
 <Section title="Props">
-  <Props {props} />
+  <Props {props} restProps />
 </Section>
