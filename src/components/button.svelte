@@ -202,6 +202,7 @@ a {
   $color: $blue;
   $hover-bg-color: $blue-100;
   $active-bg-color: $blue-200;
+  $hover-color: $blue-500;
   $focus-border: 1px solid transparent;
   $focus-outline: 2px solid $purple;
   $disabled-color: $gray-100;
@@ -211,7 +212,7 @@ a {
 
   &:hover {
     background-color: $hover-bg-color;
-    color: $color;
+    color: $hover-color;
   }
 
   &:active, &.pressed {

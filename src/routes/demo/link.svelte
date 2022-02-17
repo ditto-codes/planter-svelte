@@ -44,11 +44,11 @@
     <Link to="https://www.google.com/search?q=cow">Moo</Link>
   </Example>
   <Example label="Newtab" top>
-    <Link to="https://svelte.dev/docs" newtab>Newtab</Link>
+    <Link to="https://svelte.dev/docs" newtab>Read the Svelte Docs</Link>
   </Example>
 
 </Section>
 
 <Section title="Props">
-  <Props {props} restProps />
+  <Props {props} />
 </Section>

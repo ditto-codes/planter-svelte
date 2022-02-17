@@ -70,6 +70,13 @@
       background-color: transparent;
     }
   }
+  .logo-wrapper {
+    justify-self: start;
+    margin-right: auto;
+    span {
+      margin-bottom: 0;
+    }
+  }  
 
   a {
     $focus-outline: 2px solid $purple;
@@ -81,8 +88,7 @@
       outline: $focus-outline;
     }
   }
-
-
+  
   li {
     padding: sp(xs) sp(sm);
     list-style: none;
@@ -90,13 +96,6 @@
 
     display: flex;
     align-items: center;
-  }
-  .logo-wrapper {
-    justify-self: start;
-    margin-right: auto;
-    span {
-      margin-bottom: 0;
-    }
   }
   
 </style>

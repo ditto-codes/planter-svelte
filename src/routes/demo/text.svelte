@@ -37,6 +37,6 @@
 </Section>
 
 <Section title="Props">
-  <Props {props} />
+  <Props {props} restProps={false} />
 </Section>
 
