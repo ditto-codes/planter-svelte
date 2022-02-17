@@ -32,5 +32,29 @@
 ────────────────────────────────── -->
 
 <style lang="scss">
+  a {
+    color: $link-color;
+    text-decoration: $link-decoration;
 
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+      background-color: $link-hover-background-color;
+    }
+
+    &:focus-visible {
+      border-radius: $border-radius;
+      outline-offset: 2px; 
+      outline: 2px solid $purple;
+    }
+  }
+
+  a:not([href]):not([class]) {
+
+    &,
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 </style>

@@ -71,8 +71,8 @@
 
   <Section 
     title="Image" 
-    description="Description"
   >
+    <p slot="description">Renders <code>{`<img>`}</code> or <code>{`<picture>`}</code></p>
     <Example label="<img>" top>
       <Image src="https://picsum.photos/300/200?random=3" />
     </Example>

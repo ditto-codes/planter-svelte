@@ -35,8 +35,8 @@
 
 <Section 
   title="Link" 
-  description="Description"
 >
+  <p slot="description">Renders an <code>{`<a>`}</code></p>
   <Example label="Route" top>
     <Link to="/">Take me Home</Link>
   </Example>

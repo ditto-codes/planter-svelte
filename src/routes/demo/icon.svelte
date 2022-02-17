@@ -3,6 +3,7 @@
   import Example from '$components/demo/example.svelte';
   import Section from '$components/demo/section.svelte';
   import Props from '$components/demo/props.svelte';
+  import Link from '$components/link.svelte';
 
   let props = [
     {
@@ -13,8 +14,8 @@
       description: 'Define feather icon to render.', 
     },
     {
-      name: 'color',
-      type: 'string',
+      name: 'size',
+      type: 'string || number',
       default: `-`,
       values: [`any`,],
       description: 'Define color of icon.', 
@@ -22,7 +23,8 @@
   ]
 </script>
 
-  <Section title="Icon" description="Description">
+  <Section title="Icon">
+    <p slot="description">Renders an <code>{`<svg>`}</code> element using <Link href="https://feathericons.com/">Feather<span class="external-link"><Icon name="arrow-up-right" size={16} /></span></Link></p>
     <Example label="Icon" top>
       <Icon name="coffee" />
     </Example>
@@ -34,3 +36,9 @@
 <Section title="Props">
   <Props {props} />
 </Section>
+
+<style lang="scss">
+  .external-link {
+    vertical-align: top;
+  }
+</style>

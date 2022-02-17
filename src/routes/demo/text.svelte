@@ -26,8 +26,8 @@
 
 <Section 
   title="Text" 
-  description="Description"
 >
+  <p slot="description">Renders HTML text elements</p>
   <Example label="<p>" top>
     <Text>Next they turned to the business table. On the desk, among the neat array of papers, a large envelope was uppermost, and bore, in the doctor’s hand, the name of Mr. Utterson.</Text>
   </Example>

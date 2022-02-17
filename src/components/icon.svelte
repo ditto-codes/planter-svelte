@@ -7,10 +7,21 @@
 -->
 
 <script>
-  export let name;
   import * as feather from 'feather-icons';
+  
+  export let name;
+  export let size;
 
-  let svg = feather.icons[name].toSvg({ ...$$restProps });
+  let settings = {
+    ...$$restProps
+  }
+
+  if (size) {
+    settings.height = size;
+    settings.width = size;
+  }
+
+  let svg = feather.icons[name].toSvg({ ...settings });
 </script>
 
 <!-- RENDER

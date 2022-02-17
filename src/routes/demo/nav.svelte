@@ -31,8 +31,9 @@
 
 <Section 
   title="Nav" 
-  description="Description"
-/>
+>
+  <p slot="description">Simple container with links for site navigation</p>
+</Section>
 
 <Section title="Props">
   <Props {props} />

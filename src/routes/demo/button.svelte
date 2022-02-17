@@ -62,8 +62,8 @@
 
 <Section 
   title="Button" 
-  description="Description"
 >
+  <p slot="description">Renders a <code>{`<button>`}</code> or <code>{`<a>`}</code></p>
   <Example label="Default">
     <Button>Button</Button>
   </Example>

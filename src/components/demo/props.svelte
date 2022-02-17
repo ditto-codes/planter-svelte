@@ -1,4 +1,5 @@
 <script>
+  import Link from '$components/link.svelte';
   export let props = [
     // {
     //   name: '-',
@@ -55,7 +56,7 @@
 </table>
 <div class="footnote">
   {#if restProps}
-    <p>All additional props are passed via <code>$$restProps</code>. Read about <a href="https://svelte.dev/docs#template-syntax-attributes-and-props">Attributes & Props</a> in the Svelte Docs.</p>
+    <p>All additional props are passed via <code>$$restProps</code>. Read about <Link href="https://svelte.dev/docs#template-syntax-attributes-and-props">Attributes & Props</Link> in the Svelte Docs.</p>
   {/if}
 </div>
 

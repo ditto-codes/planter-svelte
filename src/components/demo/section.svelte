@@ -1,7 +1,7 @@
 <script>
   import Text from '$components/text.svelte';
   export let title = 'Section Title';
-  export let description = '';
+  // export let description = '';
 </script>
 
 <section>
@@ -10,10 +10,10 @@
       {title}
     </Text>
   </div>
-  {#if description}
-    <p class="description">
-      {description}
-    </p>
+  {#if $$slots.description}
+    <div class="description">
+      <slot name="description" />
+    </div>
   {/if}
   <slot/>
 </section>
@@ -35,7 +35,11 @@
   }
 
   .description {
-    margin-bottom: sp(lg);
+    margin-bottom: sp(xxl);
+    
+    :global(code) {
+      color: $red-400;
+    }
   }
 
 </style>
