@@ -34,9 +34,10 @@
   </Nav>
   <div class="layout">
     <Sidebar />
-
-    <div class="demo-body">
-      <slot/>    
+    <div class="demo-body-scroll">
+      <div class="demo-body">
+        <slot/>    
+      </div>
     </div>
   </div>
 </div>
@@ -49,6 +50,10 @@
 
   .demo-body {
     margin: sp(md);
+    
+  }
+  .demo-body-scroll {
+    overflow-y: auto;
   }
 
   .demo-container {
@@ -59,6 +64,7 @@
   .layout {
     display: grid;
     grid-template-columns: auto 1fr;
+    min-height: 100%;
   }
   
   .logo {
