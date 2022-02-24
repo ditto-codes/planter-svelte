@@ -39,13 +39,16 @@
         <p class="heading h6">{heading}</p>
         <ul>
           {#each links[heading] as link}
-            <li 
-              class={`link-wrapper${current === `/demo/${link.toLowerCase()}` 
-                ? ' selected' 
-                : ''
-              }`}
-            >
-              <a href={`/demo/${link.toLowerCase()}`} class="link">{link}</a>
+            <li>
+              <a 
+                href={`/demo/${link.toLowerCase()}`} 
+                class={`link${current === `/demo/${link.toLowerCase()}` 
+                  ? ' selected' 
+                  : ''
+                }`}
+              >
+                {link}
+              </a>
             </li>
           {/each}
         </ul>
@@ -70,9 +73,8 @@
     }
 
     li {
-      padding: sp(xs) sp(sm);
+      margin: sp(xs) 0;
       list-style: none;
-      // display: inline-block;
     }
   }
 
@@ -85,57 +87,35 @@
     margin: 0;
   }
 
-  .link-wrapper {
-    border-radius: 2px;
-    transition: $animate-fast;
-    &:hover, 
-    &:focus-within {
-      .link { 
-        color: $blue; 
-      }
-      background-color: rgba($blue-100, .25);
-    }
-    &.selected {
-      .link { 
-        color: $blue; 
-      }
-      background-color: rgba($blue-100, .5);
-    }
-    &:focus-within {
-      $focus-outline: 2px solid $purple;
-      outline-offset: 2px;
-      outline: $focus-outline;
-    }
-  }
-
   .link {
     text-decoration: none;
     display: inline-block;
     width: 100%;
-    padding: sp(xs sm);
-    
+    padding: sp(sm sm);
+    border-radius: 2px;
+    transition: $animate-fast;
     color: $gray;
-    transition: inherit;
-    &:hover {
-      color: inherit;
-      background-color: transparent;
+    
+    &.selected {
+      color: $blue; 
+      background-color: rgba($blue-100, .5);
+      &:hover,
+      &:focus-visible {
+        background-color: rgba($blue-100, .5);
+      }
+    }
+    &:hover,
+    &:focus-visible {
+      color: $blue;
+      background-color: rgba($blue-100, .25);
     }
 
     &:focus-visible {
-      outline: 0;
+      // Focus ring
+      $focus-outline: 2px solid $purple;
+      outline-offset: 2px;
+      outline: $focus-outline;
     }
-
-    // color: inherit;
-
-    // &:hover {
-    //   color: $blue;
-    //   background-color: rgba($blue-100, .25);
-    // }
-
-    // &.selected {
-    //   color: $blue;
-    //   background-color: rgba($blue, .5);
-    // }
   }
 </style>
 
