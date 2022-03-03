@@ -1,9 +1,14 @@
+<script>
+  import Button from '$components/button.svelte';
+</script>
+
 <div class="splash">
-  <img src="/planter-basic-logo.png" alt="">
+  <img src="/planter-logo.png" alt="">
   <h1>Planter Svelte</h1>
   <p>Welcome to Planter Svelte!</p>
-  <a href="/demo/button/" class="btn">Demo</a>
-  <a href="planter.dev/docs/planter-basic/getting-started" class="btn btn-ghost">Docs</a>
+  <Button href="/demo/button">Demo</Button>
+  <span class="spacer"></span>
+  <Button variant="ghost" href="planter.dev/docs/planter-basic/getting-started">Docs</Button>
 </div>
 
 <style lang="scss">
@@ -14,12 +19,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .btn {
-      display: inline-block;
-
-      &:not(:first-of-type) {
-        margin-left: sp(sm);
-      }
+    .spacer {
+      margin-left: sp(sm);
     }
   }
 </style>

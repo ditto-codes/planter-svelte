@@ -22,7 +22,7 @@
   <Nav align="right" links={links} role="Secondary">
     <li class="logo-wrapper" slot="before">
       <a href="/" class="logo">
-        <img src="/planter-basic-logo.png" alt="Planter Svelte" title="Home">
+        <img src="/planter-logo.png" alt="Planter Svelte" title="Home">
       </a>
       <span class="h6">Planter Svelte</span>
     </li>
