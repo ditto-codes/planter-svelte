@@ -19,7 +19,6 @@
       'Link',
       'Image',
       'Icon',
-      'Nav',
     ],
     'Tokens': [
       'Typography',
@@ -104,13 +103,18 @@
         background-color: rgba($blue-100, .5);
       }
     }
-    &:hover,
-    &:focus-visible {
+
+    @mixin hover-state {
       color: $blue;
       background-color: rgba($blue-100, .25);
     }
 
+    &:hover {
+      @include hover-state;
+    }
+
     &:focus-visible {
+      @include hover-state;
       // Focus ring
       $focus-outline: 2px solid $purple;
       outline-offset: 2px;
