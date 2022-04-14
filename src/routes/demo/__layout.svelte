@@ -6,7 +6,7 @@
 
 <script>
   import Button from '$components/button.svelte';
-  import Nav from '$components/nav.svelte';
+  import Nav from '$components/demo/nav.svelte';
   import Sidebar from '$components/demo/sidebar.svelte';
   import GitHubMark from '$components/demo/github-mark.svelte';
 
