@@ -3,18 +3,13 @@ import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
 
-import { URL } from 'url';
-const __dirname = new URL('.', import.meta.url).pathname;
-
 const config = {
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
 		vite: {
 			resolve: {
 				alias: {
-					'$styles': resolve(__dirname, "./src/styles/"),
-					'$components': resolve(__dirname, "./src/components/"),
+					'$styles': resolve("./src/styles/"),
+					'$components': resolve("./src/components/"),
 				}
 			}
 		}
