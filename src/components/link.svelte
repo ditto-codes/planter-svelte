@@ -35,6 +35,7 @@
   a {
     color: $link-color;
     text-decoration: $link-decoration;
+    letter-spacing: $link-letter-spacing;
 
     &:hover {
       color: $link-hover-color;
