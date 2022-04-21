@@ -3,6 +3,45 @@ Planter Svelte's styles provide a working default and are easily extensible for 
 
 Sass has also been set up to be used within your components, for local-scoped styling. All of the default components have their styles contained within their `.svelte` file.
 
+## Sass & Svelte
+Sass has been configured to be supported within of Svelte components. Just add the `lang="scss"` to the style tag within a component:
+```html
+<style lang="scss">
+  .some {
+    &:hover {
+      color: red;
+    }
+  }
+</style>
+```
+Note: You can use global tokens or mixins from `/src/styles` in this context. The token and mixin index files are configured to automatically be imported into each Svelte component style block that has the `lang="scss"` attribute.
+
+### `:global` Rule
+Styles inside of Svelte component style blocks can be global scoped with the `:global` rule. This can make adding custom styles a bit easier, when you want to do so in a more typical "CSS way" (even if it's not the "Svelte way"). Read more about global style in the [`svelte-preprocess` docs](https://github.com/sveltejs/svelte-preprocess#global-rule).
+
+```html
+<style lang="scss">
+  .scoped-style {
+  }
+
+  /* 
+    this is all local scope, and only gets applied to a p element 
+    that's rendered explicitly by this component 
+  */
+  .scope-style p {
+  }
+
+  /* 
+    for a global scoped <p>, i.e.: .scoped-style > p
+
+    this selects any <p> that's a direct child of .scope-style,
+    including a nested <p> that's rendered by another component
+  */
+  .scope-style :global(p) {
+  }
+</style>
+```
+
 ## Global Styles
 `style.scss`
 
