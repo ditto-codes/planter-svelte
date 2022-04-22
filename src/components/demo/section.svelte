@@ -1,14 +1,12 @@
 <script>
-  import Text from '$components/text.svelte';
   export let title = 'Section Title';
-  // export let description = '';
 </script>
 
 <section>
   <div class="heading">
-    <Text as="h2" class="h4">
+    <h2 class="h4">
       {title}
-    </Text>
+    </h2>
   </div>
   {#if $$slots.description}
     <div class="description">

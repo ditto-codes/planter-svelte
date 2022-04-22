@@ -15,7 +15,6 @@
   export let links = {
     'Components': [
       'Button',
-      'Text',
       'Link',
       'Image',
       'Icon',

@@ -21,12 +21,12 @@ Styles inside of Svelte component style blocks can be global scoped with the `:g
 
 ```html
 <script>
-  import Text from '@components/text.svelte'
+  import Text from '@components/link.svelte'
 </script>
 
 <div class="scope-style">
-  <Text>My Text Component text</Text>
-  <p>My vanilla text</p>
+  <Link>My Link</Link>
+  <a href="link.com">My vanilla link</p>
 </div>
 
 <style lang="scss">
