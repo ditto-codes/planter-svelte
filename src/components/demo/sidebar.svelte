@@ -9,7 +9,7 @@
 <script>  
   import { page } from '$app/stores';
 
-  $: current = $page.url.pathname;
+  $: current = $page.url;
 
   export let { class: className } = '';
   export let links = {
