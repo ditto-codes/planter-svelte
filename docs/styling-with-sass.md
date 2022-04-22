@@ -20,24 +20,33 @@ Note: You can use global tokens or mixins from `/src/styles` in this context. Th
 Styles inside of Svelte component style blocks can be global scoped with the `:global` rule. This can make adding custom styles a bit easier, when you want to do so in a more typical "CSS way" (even if it's not the "Svelte way"). Read more about global style in the [`svelte-preprocess` docs](https://github.com/sveltejs/svelte-preprocess#global-rule).
 
 ```html
+<script>
+  import Text from '@components/text.svelte'
+</script>
+
+<div class="scope-style">
+  <Text>My Text Component text</Text>
+  <p>My vanilla text</p>
+</div>
+
 <style lang="scss">
   .scoped-style {
   }
 
-  /* 
-    this is all local scope, and only gets applied to a p element 
-    that's rendered explicitly by this component 
-  */
   .scope-style p {
+    /* 
+      this is all local scope, and only gets applied to a p element 
+      that's rendered explicitly by this component 
+    */
   }
 
-  /* 
-    for a global scoped <p>, i.e.: .scoped-style > p
-
-    this selects any <p> that's a direct child of .scope-style,
-    including a nested <p> that's rendered by another component
-  */
   .scope-style :global(p) {
+    /* 
+      for a global scoped <p>, i.e.: .scoped-style > p
+
+      this selects any <p> that's a direct child of .scope-style,
+      including a nested <p> that's rendered by another component
+    */    
   }
 </style>
 ```
