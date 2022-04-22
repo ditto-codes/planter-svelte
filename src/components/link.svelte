@@ -12,6 +12,7 @@
   export { className as class };
   export let external = false;
   export let newtab = false;
+  export let unstyled = false;
 
   let rel = '';
   if (newtab) {
@@ -24,7 +25,14 @@
 <!-- RENDER
 ────────────────────────────────── -->
 
-<a href={to} class={className} target={newtab ? '_blank' : ''} {rel} {...$$restProps}>
+<a 
+  href={to} 
+  class={className}
+  class:unstyled 
+  target={newtab ? '_blank' : ''} 
+  {rel} 
+  {...$$restProps}
+>
   <slot/>
 </a>
 
@@ -32,7 +40,7 @@
 ────────────────────────────────── -->
 
 <style lang="scss">
-  a {
+  a:not(.unstyled) {
     color: $link-color;
     text-decoration: $link-decoration;
     letter-spacing: $link-letter-spacing;
@@ -47,6 +55,15 @@
       border-radius: $border-radius;
       outline-offset: 2px; 
       outline: 2px solid $purple;
+    }
+  }
+
+  // Override browser defaults
+  .unstyled {
+    text-decoration: none;
+    color: inherit;
+    &:active {
+      color: inherit;
     }
   }
 

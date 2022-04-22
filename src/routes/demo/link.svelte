@@ -37,14 +37,17 @@
   title="Link" 
 >
   <p slot="description">Renders an <code>{`<a>`}</code></p>
-  <Example label="Route" top>
+  <Example label="Route">
     <Link to="/">Take me Home</Link>
   </Example>
-  <Example label="External" top>
+  <Example label="External">
     <Link to="https://www.google.com/search?q=cow">Moo</Link>
   </Example>
-  <Example label="Newtab" top>
+  <Example label="Newtab">
     <Link to="https://svelte.dev/docs" newtab>Read the Svelte Docs</Link>
+  </Example>
+  <Example label="Unstyled">
+    <Link to="https://kit.svelte.dev/" newtab unstyled><small>Read the SvelteKit Docs</small></Link>
   </Example>
 
 </Section>
