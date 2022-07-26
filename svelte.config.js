@@ -11,11 +11,15 @@ const config = {
 					'$styles': resolve("./src/styles/"),
 					'$components': resolve("./src/components/"),
 				}
-			}
-		}
+			},
+			css: {
+				devSourcemap: true,
+			},
+		},
 	},
 	preprocess: [
 		sveltePreprocess({
+			sourceMap: true,
 			scss: {
 				includePaths: ['./src/styles', './node_modules'],
 				prependData: `
@@ -28,9 +32,12 @@ const config = {
 				plugins: [
 					autoprefixer(),
 				]
-			}
+			},
 		}),
-	]
+	],
+	compilerOptions: {
+    enableSourcemap: true,
+  },
 };
 
 export default config;
