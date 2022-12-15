@@ -1,17 +1,15 @@
 /** @type {import('@sveltejs/kit').Config} */
+import adapter from '@sveltejs/adapter-auto';
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
 
 const config = {
 	kit: {
-		vite: {
-			resolve: {
-				alias: {
-					'$styles': resolve("./src/styles/"),
-					'$components': resolve("./src/components/"),
-				}
-			}
+		adapter: adapter(),
+		alias: {
+			'$styles': resolve("./src/styles/"),
+			'$components': resolve("./src/components/"),
 		}
 	},
 	preprocess: [
