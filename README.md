@@ -5,6 +5,11 @@ A Svelte web project starter made by creators of [Planter](https://planter.dev) 
 <!-- TODO: update this link -->
 Read the full documentation on [planter.dev](https://planter.dev/planter-svelte)
 
+## Contents
+- [Getting Started](#getting-started)
+- [Styling with Sass](#styling-with-sass)
+- [Config](#config)
+
 ---
 
 # Getting Started
