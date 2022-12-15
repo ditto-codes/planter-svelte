@@ -2,7 +2,6 @@
 <script>
   import Example from '$components/demo/example.svelte';
   import Section from '$components/demo/section.svelte';
-  import Link from '$components/link.svelte';
 </script>
 
 <Section 
@@ -41,6 +40,6 @@
     <small>Next they turned to the business table. on the desk, among the neat array of papers, a large envelope was uppermost, and bore, in the doctor’s hand, the same name of mr.utterson.</small>
   </Example>
   <Example label="LINK">
-    <p>This is an <Link to="#">example</Link> of a link within a block of text.</p>
+    <p>This is an <a href="#">example</a> of a link within a block of text.</p>
   </Example>
 </Section>

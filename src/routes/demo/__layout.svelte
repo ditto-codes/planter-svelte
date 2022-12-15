@@ -11,7 +11,7 @@
   import GitHubMark from '$components/demo/github-mark.svelte';
 
   let links = [
-    { href: '#1', text: 'Docs'}, 
+    { href: 'https://planter.dev', text: 'Docs'}, 
   ];
 
 </script>

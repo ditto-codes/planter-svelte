@@ -11,7 +11,6 @@
     - Body
     - Line Height
     - Headings
-    - Display Headings
     - Lead Paragraphs
     - Links
     - Small
@@ -66,22 +65,6 @@ $h3-font-size:                2rem !default;
 $h4-font-size:                1.75rem !default;
 $h5-font-size:                1.5rem !default;
 $h6-font-size:                1rem !default;
-
-// DISPLAY HEADINGS
-// ────────────────────────────────────
-
-$display-font-family:         $font-family-sans-serif !default;
-$display-font-weight:         500 !default;
-$display-font-style:          null !default;
-$display-line-height:         $line-height-base !default;
-$display-color:               null !default;
-$display-text-transform:      null !default;
-$display-margin-bottom:       $spacer-2 !default;
-$display-letter-spacing:      null !default;
-
-$d1-font-size:                6rem !default;
-$d2-font-size:                4.75rem !default;
-$d3-font-size:                3.75rem !default;
 
 // LEAD PARAGRAPHS
 // ────────────────────────────────────

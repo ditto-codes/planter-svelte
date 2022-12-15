@@ -3,7 +3,6 @@
   import Example from '$components/demo/example.svelte';
   import Section from '$components/demo/section.svelte';
   import Props from '$components/demo/props.svelte';
-  import Link from '$components/link.svelte';
 
   let props = [
     {
@@ -24,7 +23,7 @@
 </script>
 
   <Section title="Icon">
-    <p slot="description">Renders an <code>{`<svg>`}</code> element using <Link href="https://feathericons.com/">Feather<span class="external-link"><Icon name="arrow-up-right" size={16} /></span></Link></p>
+    <p slot="description">Renders an <code>{`<svg>`}</code> element using <a href="https://feathericons.com/">Feather<span class="external-link"><Icon name="arrow-up-right" size={16} /></span></a></p>
     <Example label="Icon" top>
       <Icon name="coffee" />
     </Example>
