@@ -27,9 +27,7 @@
       <tr>
         <td class="name">{prop.name}</td>
         <td class={prop.type}>{prop.type}</td>
-        <td 
-          class={`default ${prop.default !== '-' ? prop.type : ''}`}
-        >
+        <td class={`default ${prop.default !== '-' ? prop.type : ''}`}>
           {prop.default}
         </td>
         <td class={prop.type}>
@@ -66,7 +64,7 @@
   th {
     border-bottom: 1px solid $gray-100;
     padding-bottom: sp(sm);
-    @include font-size($small-font-size);
+    font-size: $small-font-size;
     text-transform: $small-text-transform;
     font-weight: 500;
     color: $gray-300;

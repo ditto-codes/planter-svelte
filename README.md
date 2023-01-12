@@ -126,7 +126,7 @@ Tokens are a set of variables that allow you to easily reuse values across your 
 ## Mixins
 `/mixins`
 
-Mixins are reusable styles that can be used in the stylesheets. Planter Svelte provides a set of useful mixins for breakpoints, as well as some pulled from Bootstrap such as `rfs` and flex grid classes.
+Mixins are reusable styles that can be used in the stylesheets. Planter Svelte provides a set of useful mixins for breakpoints, as well as some pulled from Bootstrap such as the flex grid classes.
 
 Learn more about [Sass mixins](https://sass-lang.com/documentation/at-rules/mixin).
 
@@ -209,19 +209,6 @@ The default direction can be changed in the mixin delcaration by replacing the `
   // ...
 }
 ```
-
-### RFS
-[RFS](https://github.com/twbs/rfs) is a responsive unit resizing tool that makes things like responsive heading styles easy. 
-
-Using the `font-size` shorthand from `rfs`:
-```scss
-// src/styles/_base.scss
-h1 {
-  @include font-size($h1-font-size);
-}
-```
-
-More about the `rfs()` mixin and the available shorthands are included in the [Bootstrap RFS docs](https://getbootstrap.com/docs/5.1/getting-started/rfs/#using-the-mixins).
 
 ### Grid (Flex)
 The optional grid mixins are used to generate [Bootstrap's grid classes](https://getbootstrap.com/docs/5.0/layout/grid/), e.g., `.container`, `.row`, `.col` and their breakpoint variants. `styles/_grid.scss` uses the mixins in `_container.scss` and `_grid.scss`. By default, these grid classes are disabled but can be enabled in `styles/tokens/_grid.scss` by `$enable-grid-classes: true;`.

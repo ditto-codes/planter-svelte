@@ -24,7 +24,7 @@
     align-items: unset;
   }
   .label {
-    @include font-size($small-font-size);
+    font-size: $small-font-size;
     color: $gray-300;
     font-weight: 400;
     font-family: $font-family-monospace;

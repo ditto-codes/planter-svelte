@@ -43,7 +43,7 @@
 body {
   margin: 0;
   font-family: $font-family-base;
-  @include font-size($font-size-base);
+  font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
   color: $body-font-color;
@@ -76,32 +76,32 @@ body {
 
 h1 {
   @extend %heading;
-  @include font-size($h1-font-size);
+  font-size: $h1-font-size;
 }
 
 h2 {
   @extend %heading;
-  @include font-size($h2-font-size);
+  font-size: $h2-font-size;
 }
 
 h3 {
   @extend %heading;
-  @include font-size($h3-font-size);
+  font-size: $h3-font-size;
 }
 
 h4 {
   @extend %heading;
-  @include font-size($h4-font-size);
+  font-size: $h4-font-size;
 }
 
 h5 {
   @extend %heading;
-  @include font-size($h5-font-size);
+  font-size: $h5-font-size;
 }
 
 h6 {
   @extend %heading;
-  @include font-size($h6-font-size);
+  font-size: $h6-font-size;
 }
 .h1 { @extend h1; }
 .h2 { @extend h2; }
@@ -115,13 +115,13 @@ p {
 }
 
 .lead {
-  @include font-size($lead-font-size);
+  font-size: $lead-font-size;
   font-weight: $lead-font-weight;
 }
 
 small, 
 .small-text {
-  @include font-size($small-font-size);
+  font-size: $small-font-size;
   font-weight: $small-font-weight;
   text-transform: $small-text-transform;
   letter-spacing: $small-letter-spacing;
