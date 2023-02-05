@@ -133,18 +133,18 @@
   @else if $numArgs == 3 {
     $direction: list.nth($args, 3);
     @if $direction == between {
-      @include breakpoint-between(list.nth($arg, 1), list.nth($arg, 2)) { 
+      @include breakpoint-between(list.nth($args, 1), list.nth($args, 2)) { 
         @content;
       }
     }
   }
   @else if $numArgs == 2 {
-    @include breakpoint(list.nth($arg, 1), list.nth($arg, 2)) { 
+    @include breakpoint(list.nth($args, 1), list.nth($args, 2)) { 
       @content;
     }
   }
   @else if $numArgs == 1 {
-    @include breakpoint(list.nth($arg, 1)) { 
+    @include breakpoint(list.nth($args, 1)) { 
       @content;
     }
   }
