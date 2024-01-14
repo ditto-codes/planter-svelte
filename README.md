@@ -40,7 +40,7 @@ Static assets, such as images or external scripts.
 
 ### `/src/routes`
 Create pages by adding files to the `src/routes` directory of your project. Read more about [routing](https://kit.svelte.dev/docs/routing) in SvelteKit. 
-Note: at the root of `src/routes`, there's a file named `__layout.svelte`; Planter Svelte uses this file to apply global styles to all pages. Read more about [layouts](https://kit.svelte.dev/docs/layouts) in SvelteKit.
+Note: at the root of `src/routes`, there's a file named `+layout.svelte`; Planter Svelte uses this file to apply global styles to all pages. Read more about [layouts](https://kit.svelte.dev/docs/layouts) in SvelteKit.
 
 ### `/src/components`
 A place to house your components. This directory includes a few simple components to get you started.
