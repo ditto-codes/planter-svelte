@@ -8,7 +8,7 @@
   <p>Welcome to Planter Svelte!</p>
   <Button href="/demo/button">Demo</Button>
   <span class="spacer"></span>
-  <Button variant="ghost" href="https://planter.dev">Docs</Button>
+  <Button variant="ghost" href="https://planter.dev/docs/svelte/getting-started">Docs</Button>
 </div>
 
 <style lang="scss">
